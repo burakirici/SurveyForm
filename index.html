@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #e66465, #9198e5);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        #survey-form {
+            background: #1c2237;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 400px;
+            color: #f4f4f9;
+        }
+        h1 {
+            text-align: center;
+            color: #f4f4f9;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        p#description {
+            text-align: center;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            color: #d1d5db;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            color: #e0e0e0;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 6px;
+            background-color: #2a2e43;
+            color: #e0e0e0;
+            box-sizing: border-box;
+        }
+        input[type="radio"], input[type="checkbox"] {
+            width: auto;
+            margin-right: 10px;
+        }
+        input::placeholder, textarea::placeholder {
+            color: #9ca3af;
+        }
+        select {
+            background-color: #2a2e43;
+            color: #e0e0e0;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            padding: 12px;
+            border-radius: 6px;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .checkbox-group, .radio-group {
+            margin-bottom: 15px;
+        }
+        .checkbox-group label, .radio-group label {
+            display: inline-block;
+            margin-right: 15px;
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+    <!-- 1. Sayfa Başlığı -->
+    <h1 id="title">Survey Form For CSS Practice</h1>
+
+    <!-- 2. Açıklama -->
+    <p id="description">Please fill out the following form to help us improve our services.</p>
+
+    <!-- 3. Form Elementi -->
+    <form id="survey-form">
+
+        <!-- 4. İsim Giriş Alanı -->
+        <label id="name-label" for="name">
+            <i class="fa fa-user"></i> Full Name:
+        </label>
+        <input id="name" type="text" placeholder="Enter your name" required>
+
+        <!-- 5. E-posta Giriş Alanı -->
+        <label id="email-label" for="email">
+            <i class="fa fa-envelope"></i> Mail:
+        </label>
+        <input id="email" type="email" placeholder="Enter your email" required>
+
+        <!-- 6. Sayı Giriş Alanı -->
+        <label id="number-label" for="number">
+            <i class="fa fa-calendar"></i> Age:
+        </label>
+        <input id="number" type="number" placeholder="Enter your age" min="1" max="120" required>
+
+        <!-- 8. Seçim Kutusu -->
+        <label for="dropdown">Select Gender:</label>
+        <select id="dropdown" required>
+            <option value="">Select an option</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+
+        <!-- 9. Radyo Düğmeleri -->
+        <div class="radio-group">
+            <p>Where did you hear us?</p>
+            <input type="radio" id="instagram" name="source" value="instagram">
+            <label for="instagram">Instagram</label>
+            <input type="radio" id="linkedin" name="source" value="linkedin">
+            <label for="linkedin">LinkedIn</label>
+        </div>
+
+        <!-- 10. Onay Kutuları -->
+        <div class="checkbox-group">
+            <input type="checkbox" id="terms" value="terms">
+            <label for="terms">Terms Of Service</label>
+            <input type="checkbox" id="subscribe" value="news">
+            <label for="subscribe">Subscribe For News</label>
+        </div>
+
+        <!-- 11. Metin Alanı -->
+        <label for="comments">Suggestions</label>
+        <textarea id="comments" placeholder="Suggestions"></textarea>
+
+        <!-- 12. Gönder Butonu -->
+        <input id="submit" type="submit" value="Sign Up">
+
+    </form>
+</body>
+</html>
